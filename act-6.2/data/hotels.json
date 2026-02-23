@@ -1,0 +1,23 @@
+[
+  {
+    "hotel_id": "H001",
+    "name": "Grand Hotel CDMX",
+    "location": "Ciudad de Mexico",
+    "rooms": 50,
+    "rooms_available": 48
+  },
+  {
+    "hotel_id": "H002",
+    "name": "Plaza Monterrey",
+    "location": "Monterrey",
+    "rooms": 30,
+    "rooms_available": 30
+  },
+  {
+    "hotel_id": "H003",
+    "name": "Resort Cancun",
+    "location": "Cancun",
+    "rooms": 100,
+    "rooms_available": 95
+  }
+]
