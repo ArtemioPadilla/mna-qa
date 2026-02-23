@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install flake8 pylint coverage
+
+      - name: Flake8
+        run: flake8 act-6.2/hotel.py act-6.2/customer.py act-6.2/reservation.py
+
+      - name: Pylint
+        run: pylint act-6.2/hotel.py act-6.2/customer.py act-6.2/reservation.py --rcfile=act-6.2/.pylintrc
+
+      - name: Unit tests
+        working-directory: act-6.2
+        run: python -m unittest discover -v
+
+      - name: Coverage
+        working-directory: act-6.2
+        run: |
+          coverage run -m unittest discover
+          coverage report -m --include="hotel.py,customer.py,reservation.py" --fail-under=85
