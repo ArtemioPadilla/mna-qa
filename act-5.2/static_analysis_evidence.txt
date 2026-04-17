@@ -1,0 +1,37 @@
+Evidencia de Análisis Estático — computeSales.py
+Alumno: Artemio Santiago Padilla Robles (A01796613)
+Fecha: 22 de febrero de 2026
+
+Herramientas utilizadas:
+  - flake8 7.3.0 (pycodestyle 2.14.0, pyflakes 3.4.0, mccabe 0.7.0)
+  - pylint 4.0.4 (astroid 4.0.4)
+  - Python 3.11.13
+
+============================================================
+1. flake8
+============================================================
+
+$ flake8 computeSales.py
+
+(sin errores — 0 issues)
+
+Exit code: 0
+
+============================================================
+2. pylint
+============================================================
+
+$ pylint computeSales.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+Exit code: 0
+
+============================================================
+Conclusión
+============================================================
+
+Ambas herramientas de análisis estático reportan cero errores.
+El código cumple con PEP-8 (Req 8) y obtiene calificación perfecta
+de 10.00/10 en pylint.
